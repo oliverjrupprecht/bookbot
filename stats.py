@@ -26,3 +26,27 @@ def get_num_characters(filepath):
             count[low] += 1
 
     return count
+
+def make_new_dict(dict):
+    list = []
+
+    for key in dict:
+        new_dict = {}
+        if key not in new_dict:
+            new_dict["char"] = key
+            new_dict["num"] = dict[key]
+            list.append(new_dict)
+
+    return list
+
+def sort_on(dict):
+    return dict["num"]
+
+def sort_by_apperance(dict):
+
+    new_dict = make_new_dict(dict)
+
+    new_dict.sort(reverse=True, key=sort_on)
+
+    return new_dict
+
