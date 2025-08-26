@@ -12,3 +12,17 @@ def get_num_words(filepath):
         count += 1
 
     return count
+
+def get_num_characters(filepath):
+    file_contents = get_book_text(filepath)
+
+    count = {}
+    
+    for char in file_contents:
+        low = char.lower()
+        if low not in count:
+            count[low] = 1
+        else: 
+            count[low] += 1
+
+    return count
